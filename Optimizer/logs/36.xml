@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<autodock_gpu>
+	<version>v1.5.3-33-g2ecd342b493d1e9b7b488ea2b642df1e0adcb50d</version>
+	<arguments>-ffile 6LU7.maps.fld -lfile molecules/36.pdbqt -resnam logs/36 -nrun 5 -devnum 1</arguments>
+	<grid>6LU7.maps.fld</grid>
+	<ligand>molecules/36.pdbqt</ligand>
+	<seed>1663151177 16710</seed>
+	<ls_method>ad</ls_method>
+	<autostop>yes</autostop>
+	<heuristics>yes</heuristics>
+	<run_requested>5</run_requested>
+	<runs>
+		<run id="5">
+			<free_NRG_binding>   -12.90</free_NRG_binding>
+			<final_intermol_NRG> -15.58</final_intermol_NRG>
+			<internal_ligand_NRG>-3.83</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.68</torsonial_free_NRG>
+			<tran0>9.450154 8.214057 13.025008</tran0>
+			<axisangle0>0.08835636 -0.13835525 -0.98643346 52.570389</axisangle0>
+			<ndihe>9</ndihe>
+			<dihe0>275.174255 88.269821 44.138252 108.493996 118.185867 136.489319 101.692741 126.138496 102.733894
+			</dihe0>
+		</run>
+		<run id="1">
+			<free_NRG_binding>   -12.58</free_NRG_binding>
+			<final_intermol_NRG> -15.26</final_intermol_NRG>
+			<internal_ligand_NRG>-2.97</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.68</torsonial_free_NRG>
+			<tran0>11.918401 5.652131 8.184492</tran0>
+			<axisangle0>0.79849726 0.60173935 -0.01765983 165.941528</axisangle0>
+			<ndihe>9</ndihe>
+			<dihe0>316.010223 153.161865 39.858295 113.910828 256.207458 113.091400 139.218704 32.660763 244.966629
+			</dihe0>
+		</run>
+		<run id="2">
+			<free_NRG_binding>   -12.54</free_NRG_binding>
+			<final_intermol_NRG> -15.23</final_intermol_NRG>
+			<internal_ligand_NRG>-3.03</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.68</torsonial_free_NRG>
+			<tran0>11.987629 5.594674 8.215685</tran0>
+			<axisangle0>-0.80700367 -0.59007711 0.02353897 194.176132</axisangle0>
+			<ndihe>9</ndihe>
+			<dihe0>317.014282 335.905823 49.883968 107.546127 259.603638 101.574471 146.274887 33.825485 246.920731
+			</dihe0>
+		</run>
+		<run id="4">
+			<free_NRG_binding>   -12.06</free_NRG_binding>
+			<final_intermol_NRG> -14.74</final_intermol_NRG>
+			<internal_ligand_NRG>-4.16</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.68</torsonial_free_NRG>
+			<tran0>13.849846 11.513259 12.287474</tran0>
+			<axisangle0>-0.08795888 0.53275200 0.84168791 146.297775</axisangle0>
+			<ndihe>9</ndihe>
+			<dihe0>277.783997 108.114037 46.730000 240.403671 82.268715 205.533829 67.004715 63.186153 144.621109
+			</dihe0>
+		</run>
+		<run id="3">
+			<free_NRG_binding>   -11.24</free_NRG_binding>
+			<final_intermol_NRG> -13.92</final_intermol_NRG>
+			<internal_ligand_NRG>-4.44</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.68</torsonial_free_NRG>
+			<tran0>11.399776 9.695958 9.868465</tran0>
+			<axisangle0>0.16302568 -0.57160372 -0.80417151 133.934464</axisangle0>
+			<ndihe>9</ndihe>
+			<dihe0>103.320244 321.801483 274.361633 287.242279 254.864624 117.092636 130.053986 105.521072 58.309837
+			</dihe0>
+		</run>
+	</runs>
+	<result>
+		<clustering_histogram>
+			<cluster cluster_rank="1" lowest_binding_energy="-12.90" run="5" mean_binding_energy="-12.90" num_in_clus="1" />
+			<cluster cluster_rank="2" lowest_binding_energy="-12.58" run="1" mean_binding_energy="-12.56" num_in_clus="2" />
+			<cluster cluster_rank="3" lowest_binding_energy="-12.06" run="4" mean_binding_energy="-12.06" num_in_clus="1" />
+			<cluster cluster_rank="4" lowest_binding_energy="-11.24" run="3" mean_binding_energy="-11.24" num_in_clus="1" />
+		</clustering_histogram>
+		<rmsd_table>
+			<run rank="1" sub_rank="1" run="5" binding_energy="-12.90" cluster_rmsd="0.00" reference_rmsd="68.69" />
+			<run rank="2" sub_rank="1" run="1" binding_energy="-12.58" cluster_rmsd="0.00" reference_rmsd="67.30" />
+			<run rank="2" sub_rank="2" run="2" binding_energy="-12.54" cluster_rmsd="0.12" reference_rmsd="67.34" />
+			<run rank="3" sub_rank="1" run="4" binding_energy="-12.06" cluster_rmsd="0.00" reference_rmsd="68.31" />
+			<run rank="4" sub_rank="1" run="3" binding_energy="-11.24" cluster_rmsd="0.00" reference_rmsd="67.37" />
+		</rmsd_table>
+	</result>
+</autodock_gpu>

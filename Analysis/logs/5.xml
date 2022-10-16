@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<autodock_gpu>
+	<version>v1.5.3-33-g2ecd342b493d1e9b7b488ea2b642df1e0adcb50d</version>
+	<arguments>-ffile 6LU7.maps.fld -lfile molecules/5.pdbqt -resnam logs/5 -nrun 5 -devnum 1</arguments>
+	<grid>6LU7.maps.fld</grid>
+	<ligand>molecules/5.pdbqt</ligand>
+	<seed>1665878131 28114</seed>
+	<ls_method>ad</ls_method>
+	<autostop>yes</autostop>
+	<heuristics>yes</heuristics>
+	<run_requested>5</run_requested>
+	<runs>
+		<run id="4">
+			<free_NRG_binding>   -11.77</free_NRG_binding>
+			<final_intermol_NRG> -14.75</final_intermol_NRG>
+			<internal_ligand_NRG>-2.94</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.98</torsonial_free_NRG>
+			<tran0>11.449994 5.404574 10.622590</tran0>
+			<axisangle0>-0.71170229 0.63268275 -0.30527428 196.541489</axisangle0>
+			<ndihe>10</ndihe>
+			<dihe0>93.324532 284.375244 123.957893 210.395844 307.237823 96.241798 357.916321 34.698269 351.457642 325.514618
+			</dihe0>
+		</run>
+		<run id="5">
+			<free_NRG_binding>   -11.71</free_NRG_binding>
+			<final_intermol_NRG> -14.69</final_intermol_NRG>
+			<internal_ligand_NRG>-2.97</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.98</torsonial_free_NRG>
+			<tran0>11.417231 5.545872 10.606853</tran0>
+			<axisangle0>-0.72544486 0.61563236 -0.30777679 194.824738</axisangle0>
+			<ndihe>10</ndihe>
+			<dihe0>92.585258 281.589600 125.324341 208.201126 304.273285 108.585869 341.553864 214.010666 352.297546 328.019531
+			</dihe0>
+		</run>
+		<run id="1">
+			<free_NRG_binding>   -11.30</free_NRG_binding>
+			<final_intermol_NRG> -14.28</final_intermol_NRG>
+			<internal_ligand_NRG>-2.88</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.98</torsonial_free_NRG>
+			<tran0>9.709425 10.668724 10.796734</tran0>
+			<axisangle0>-0.48195883 -0.53979621 -0.69017080 265.559937</axisangle0>
+			<ndihe>10</ndihe>
+			<dihe0>184.534607 239.797974 103.271423 49.773327 249.788086 276.315033 249.001816 9.478768 12.113438 356.556427
+			</dihe0>
+		</run>
+		<run id="3">
+			<free_NRG_binding>   -9.38</free_NRG_binding>
+			<final_intermol_NRG> -12.36</final_intermol_NRG>
+			<internal_ligand_NRG>-4.74</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.98</torsonial_free_NRG>
+			<tran0>7.783645 6.924955 5.554719</tran0>
+			<axisangle0>0.55618876 -0.15405212 -0.81665293 136.837784</axisangle0>
+			<ndihe>10</ndihe>
+			<dihe0>349.124786 232.164520 197.351105 229.892075 332.226105 276.019897 297.127258 113.663902 248.122223 142.376373
+			</dihe0>
+		</run>
+		<run id="2">
+			<free_NRG_binding>   -9.08</free_NRG_binding>
+			<final_intermol_NRG> -12.06</final_intermol_NRG>
+			<internal_ligand_NRG>-4.74</internal_ligand_NRG>
+			<torsonial_free_NRG> 2.98</torsonial_free_NRG>
+			<tran0>7.659777 6.564630 8.347907</tran0>
+			<axisangle0>0.02779803 0.00377549 -0.99960643 115.905045</axisangle0>
+			<ndihe>10</ndihe>
+			<dihe0>242.442383 235.085587 233.731857 311.182190 261.349823 78.897812 117.120659 355.868408 198.710114 161.342804
+			</dihe0>
+		</run>
+	</runs>
+	<result>
+		<clustering_histogram>
+			<cluster cluster_rank="1" lowest_binding_energy="-11.77" run="4" mean_binding_energy="-11.74" num_in_clus="2" />
+			<cluster cluster_rank="2" lowest_binding_energy="-11.30" run="1" mean_binding_energy="-11.30" num_in_clus="1" />
+			<cluster cluster_rank="3" lowest_binding_energy="-9.38" run="3" mean_binding_energy="-9.38" num_in_clus="1" />
+			<cluster cluster_rank="4" lowest_binding_energy="-9.08" run="2" mean_binding_energy="-9.08" num_in_clus="1" />
+		</clustering_histogram>
+		<rmsd_table>
+			<run rank="1" sub_rank="1" run="4" binding_energy="-11.77" cluster_rmsd="0.00" reference_rmsd="68.89" />
+			<run rank="1" sub_rank="2" run="5" binding_energy="-11.71" cluster_rmsd="0.13" reference_rmsd="68.91" />
+			<run rank="2" sub_rank="1" run="1" binding_energy="-11.30" cluster_rmsd="0.00" reference_rmsd="69.21" />
+			<run rank="3" sub_rank="1" run="3" binding_energy="-9.38" cluster_rmsd="0.00" reference_rmsd="67.17" />
+			<run rank="4" sub_rank="1" run="2" binding_energy="-9.08" cluster_rmsd="0.00" reference_rmsd="69.12" />
+		</rmsd_table>
+	</result>
+</autodock_gpu>

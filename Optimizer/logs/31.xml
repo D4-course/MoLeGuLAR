@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<autodock_gpu>
+	<version>v1.5.3-33-g2ecd342b493d1e9b7b488ea2b642df1e0adcb50d</version>
+	<arguments>-ffile 6LU7.maps.fld -lfile molecules/31.pdbqt -resnam logs/31 -nrun 5 -devnum 1</arguments>
+	<grid>6LU7.maps.fld</grid>
+	<ligand>molecules/31.pdbqt</ligand>
+	<seed>1663151159 16611</seed>
+	<ls_method>ad</ls_method>
+	<autostop>yes</autostop>
+	<heuristics>yes</heuristics>
+	<run_requested>5</run_requested>
+	<runs>
+		<run id="1">
+			<free_NRG_binding>   -11.37</free_NRG_binding>
+			<final_intermol_NRG> -14.95</final_intermol_NRG>
+			<internal_ligand_NRG>-4.26</internal_ligand_NRG>
+			<torsonial_free_NRG> 3.58</torsonial_free_NRG>
+			<tran0>10.221065 6.017254 12.810566</tran0>
+			<axisangle0>-0.31265986 0.08381096 -0.94616042 260.007263</axisangle0>
+			<ndihe>12</ndihe>
+			<dihe0>354.803375 79.201447 318.541382 49.923729 238.930984 120.769341 109.404381 102.892433 28.543995 246.229553 348.011261 241.317978
+			</dihe0>
+		</run>
+		<run id="4">
+			<free_NRG_binding>   -11.21</free_NRG_binding>
+			<final_intermol_NRG> -14.79</final_intermol_NRG>
+			<internal_ligand_NRG>-4.98</internal_ligand_NRG>
+			<torsonial_free_NRG> 3.58</torsonial_free_NRG>
+			<tran0>11.102042 6.418221 12.421370</tran0>
+			<axisangle0>0.62746189 0.77812976 0.02838415 150.034912</axisangle0>
+			<ndihe>12</ndihe>
+			<dihe0>354.806732 246.891495 262.373291 79.329613 316.059692 57.153034 323.743042 9.287229 94.342743 120.426430 206.585358 185.581726
+			</dihe0>
+		</run>
+		<run id="2">
+			<free_NRG_binding>   -11.13</free_NRG_binding>
+			<final_intermol_NRG> -14.71</final_intermol_NRG>
+			<internal_ligand_NRG>-4.73</internal_ligand_NRG>
+			<torsonial_free_NRG> 3.58</torsonial_free_NRG>
+			<tran0>11.104220 7.133208 12.568565</tran0>
+			<axisangle0>-0.59030911 -0.79905266 -0.11423656 208.082565</axisangle0>
+			<ndihe>12</ndihe>
+			<dihe0>49.434582 244.708710 59.838867 145.407227 306.231293 160.548492 284.008301 202.699356 92.983101 131.819977 145.436264 230.045105
+			</dihe0>
+		</run>
+		<run id="3">
+			<free_NRG_binding>   -10.97</free_NRG_binding>
+			<final_intermol_NRG> -14.55</final_intermol_NRG>
+			<internal_ligand_NRG>-4.81</internal_ligand_NRG>
+			<torsonial_free_NRG> 3.58</torsonial_free_NRG>
+			<tran0>11.651411 6.919166 10.671930</tran0>
+			<axisangle0>-0.04414572 -0.00366476 -0.99901838 127.222588</axisangle0>
+			<ndihe>12</ndihe>
+			<dihe0>355.362244 65.592216 304.617859 124.335854 126.940727 182.428894 0.084259 52.331947 25.128237 190.303879 110.509216 239.738693
+			</dihe0>
+		</run>
+		<run id="5">
+			<free_NRG_binding>   -10.94</free_NRG_binding>
+			<final_intermol_NRG> -14.52</final_intermol_NRG>
+			<internal_ligand_NRG>-5.34</internal_ligand_NRG>
+			<torsonial_free_NRG> 3.58</torsonial_free_NRG>
+			<tran0>11.024125 6.073685 12.397075</tran0>
+			<axisangle0>-0.63959030 -0.76844787 -0.02030042 209.667419</axisangle0>
+			<ndihe>12</ndihe>
+			<dihe0>311.091064 234.873688 272.676056 71.642921 309.007202 73.853287 321.973572 210.872528 350.175354 231.915894 1.975681 317.167816
+			</dihe0>
+		</run>
+	</runs>
+	<result>
+		<clustering_histogram>
+			<cluster cluster_rank="1" lowest_binding_energy="-11.37" run="1" mean_binding_energy="-11.37" num_in_clus="1" />
+			<cluster cluster_rank="2" lowest_binding_energy="-11.21" run="4" mean_binding_energy="-11.09" num_in_clus="3" />
+			<cluster cluster_rank="3" lowest_binding_energy="-10.97" run="3" mean_binding_energy="-10.97" num_in_clus="1" />
+		</clustering_histogram>
+		<rmsd_table>
+			<run rank="1" sub_rank="1" run="1" binding_energy="-11.37" cluster_rmsd="0.00" reference_rmsd="66.23" />
+			<run rank="2" sub_rank="1" run="4" binding_energy="-11.21" cluster_rmsd="0.00" reference_rmsd="66.89" />
+			<run rank="2" sub_rank="2" run="2" binding_energy="-11.13" cluster_rmsd="1.53" reference_rmsd="66.90" />
+			<run rank="2" sub_rank="3" run="5" binding_energy="-10.94" cluster_rmsd="0.87" reference_rmsd="66.78" />
+			<run rank="3" sub_rank="1" run="3" binding_energy="-10.97" cluster_rmsd="0.00" reference_rmsd="66.99" />
+		</rmsd_table>
+	</result>
+</autodock_gpu>

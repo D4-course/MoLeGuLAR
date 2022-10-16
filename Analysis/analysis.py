@@ -148,7 +148,7 @@ def estimate_and_update(generator, predictor, n_to_generate, receptor):
     unique_smiles = list(np.unique(sanitized))[1:]
     smiles, prediction, nan_smiles = predictor.predict(unique_smiles, receptor)
 
-    plot_hist(prediction, n_to_generate)
+    # plot_hist(prediction, n_to_generate)
 
     return smiles, prediction
 
@@ -275,7 +275,7 @@ def get_all_props(smiles, predictions):
         'LogP': LogPs,
         'QED': qeds,
         'TPSA': tpsas,
-        '$\Delta G_{Hyd}$': hydrations
+        'Delta_G': hydrations
     })
 
 
@@ -323,6 +323,6 @@ plt.show()
 # %%
 plt.figure(figsize=(10, 10))
 plt.rcParams.update({'font.size': 24})
-sns.kdeplot(df['$\\Delta G_{Hyd}$'], shade=True)
+sns.kdeplot(df['Delta_G'], shade=True)
 plt.xlabel('$\\Delta G_{Hyd}$ (kcal/mol)')
 plt.show()

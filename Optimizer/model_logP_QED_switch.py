@@ -33,6 +33,10 @@ from Predictors.GINPredictor import Predictor as GINPredictor
 from Predictors.RFRPredictor import RFRPredictor
 from Predictors.SolvationPredictor import FreeSolvPredictor
 
+# from fastapi import FastAPI
+# import uvicorn
+# from pydantic import BaseModel
+
 RDLogger.DisableLog('rdApp.info')
 
 parser = argparse.ArgumentParser()
@@ -67,6 +71,18 @@ thresholds = {
     'solvation': args.solvation_threshold,
     'QED': args.qed_threshold
 }
+
+# Creating FastAPI instance
+# app = FastAPI()
+ 
+# Creating class to define the request body
+# and the type hints of each attribute
+# class HyperParameters(BaseModel):
+#     protein : str
+#     logP_threshold : float
+#     qed_threshold : float
+#     solvation_threshold : float
+#     tpsa_threshold : float
 
 receptor = args.protein
 random.seed(args.seed)
@@ -193,11 +209,11 @@ def dock_and_get_score(smile, test=False):
         os.system(f"autogrid4 -p {receptor}.gpf > /dev/null 2>&1")
         os.system(f"../AutoDock-GPU/bin/autodock_gpu_128wi -ffile {receptor}.maps.fld -lfile {MOL_DIR}/{str(OVERALL_INDEX)}.pdbqt -resnam {LOGS_DIR}/{str(OVERALL_INDEX)} -nrun 10 -devnum 1 > /dev/null 2>&1")
 
-        print()
-        print(f"{path}/prepare_ligand4.py -l {MOL_DIR}/{str(OVERALL_INDEX)}.pdb -o {MOL_DIR}/{str(OVERALL_INDEX)}.pdbqt")
-        print(f"{path}/prepare_receptor4.py -r {receptor}.pdb")
-        print(f"../AutoDock-GPU/bin/autodock_gpu_128wi -ffile {receptor}.maps.fld -lfile {MOL_DIR}/{str(OVERALL_INDEX)}.pdbqt -resnam {LOGS_DIR}/{str(OVERALL_INDEX)} -nrun 10 -devnum 1 > /dev/null 2>&1")
-        print()
+        # print()
+        # print(f"{path}/prepare_ligand4.py -l {MOL_DIR}/{str(OVERALL_INDEX)}.pdb -o {MOL_DIR}/{str(OVERALL_INDEX)}.pdbqt")
+        # print(f"{path}/prepare_receptor4.py -r {receptor}.pdb")
+        # print(f"../AutoDock-GPU/bin/autodock_gpu_128wi -ffile {receptor}.maps.fld -lfile {MOL_DIR}/{str(OVERALL_INDEX)}.pdbqt -resnam {LOGS_DIR}/{str(OVERALL_INDEX)} -nrun 10 -devnum 1 > /dev/null 2>&1")
+        # print()
         cmd = f"cat {LOGS_DIR}/{str(OVERALL_INDEX)}.dlg | grep -i ranking | tr -s '\t' ' ' | cut -d ' ' -f 5 | head -n1"
         stream = os.popen(cmd)
         output = float(stream.read().strip())
@@ -315,6 +331,7 @@ logp_iter = []
 solvation_iter = []
 qed_iter = []
 tpsa_iter = []
+smiles_iter = []
 solvation_predictor = FreeSolvPredictor('./Predictors/SolvationPredictor.tar')
 PRED_FILE = f"./predictions/{args.reward_function}_{args.remarks}"
 
@@ -357,10 +374,15 @@ for i in range(n_iterations):
             pass
     _, solvations, _ = solvation_predictor.predict(smiles_cur)
 
+    with open("temp_smiles.txt", "w") as file1:
+        for smile in smiles_cur:
+            file1.write(f"{smile}\n")
+
     logp_iter.append(np.mean(logps))
     solvation_iter.append(np.mean(solvations))
     qed_iter.append(np.mean(qeds))
     tpsa_iter.append(np.mean(tpsas))
+    smiles_iter += smiles_cur
     print(f"BA: {preds[-1]}")
     print(f"LogP {logp_iter[-1]}")
     print(f"Hydration {solvation_iter[-1]}")
@@ -382,6 +404,21 @@ for i in range(n_iterations):
     np.savetxt(LOSS_FILE, rl_losses)
     np.savetxt(REWARD_FILE, rewards)
     np.savetxt(PRED_FILE, preds)
+
+
+with open("gen_smiles.txt", "w") as file1:
+    for smile in smiles_iter:
+            file1.write(f"{smile}\n")
+
+# Creating an Endpoint to receive the data
+# to make prediction on.
+# @app.post('/predict')
+# def predict(data : HyperParameters):
+
+#     main_logic(data)
+
+#     # Return the Result
+#     return { 'smiles' : smiles_iter}
 
 TRAJ_FILE.close()
 if args.use_wandb == 'yes':
