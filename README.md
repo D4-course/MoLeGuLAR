@@ -1,4 +1,9 @@
-# MoleGuLAR: Molecule generation using Reinforcement Learning and Alternating Rewards
+# Team 23, 2019113005, Arihanth Srikar Tadanki
+
+## Link to project video
+Has been uploaded to YouTube [Link](https://youtu.be/fqUs5_NXAVg)
+
+## MoleGuLAR: Molecule generation using Reinforcement Learning and Alternating Rewards
 Design of new inhibitors for novel targets is a very important problem especially in the current scenario. Conventional approaches undertaken to this end like high-throughput virtual screening require extensive combing through existing datasets in the hope of finding possible matches. In this study we propose a computational strategy for de novo generation of molecules with high binding affinities to the specified target. A deep generative model is built using a stack augmented recurrent neural network for initially generating drug like molecules and then it is optimized using reinforcement learning to start generating molecules with desirable properties the most important of which is the binding affinity. The reinforcement learning section of the pipeline is further extended to multi-objective optimization showcasing the model's ability to generate molecules with a wide variety of properties desirable for drug like molecules, like, LogP, Quantitative Estimate of Drug Likeliness etc. For multi-objective optimization, we have devised a novel strategy for optimization in which the property being used to calculate the reward is changed periodically. In comparison to the conventional approach of taking a weighted sum of all rewards, this strategy has shown much better performance in it's ability to generate a significantly higher number of molecules with desirable properties.
 
 ![Pipeline](Images/MainDiagram.png "Pipeline")
